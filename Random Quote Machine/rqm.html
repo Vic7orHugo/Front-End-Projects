@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Random Quote Machine</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!-- Latest compiled and minified CSS of Bootstrap4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Linking the custom .css file -->
+    <link rel="stylesheet" type="text/css" href="./rqm.css">
+  </head>
+
+  <body class="bg-dark">
+    <div class="container-fluid">
+      <div class="quote-box bg-light">
+        
+        <blockquote class="blockquote text-center quote-block">
+          <h3 id="quote" class="quote font-ubuntu">
+            QUOTE
+          </h3>
+          <footer id="author" class="blockquote-footer text-right font-nanum">AUTHOR
+          </footer>
+        </blockquote>
+        <div class="buttons">
+          <button id = "getQuote" class = "btn btn-primary">
+              Get Quote
+          </button>
+          <a id="tweet" class="btn btn-primary btn-twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+        </div>
+      </div>
+      
+      <footer class="bg-dark">
+        <p class="font-ubuntu text-center text-light">Created by <a class="text-info" href="https://codepen.io/victorhugossml" target="_blank">Victor Hugo Sales</a> using <a class="text-info" href="https://forismatic.com/en/" target="_blank">Forismatic API</a></p>
+      </footer>
+      
+    </div>
+    
+    <!-- jQuery from Google CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Linking the .js file. This is done in the end of the .htlm file so the page loads faster. -->
+    <script src="./rqm.js" type="text/javascript"></script>
+
+  </body>
+</html>

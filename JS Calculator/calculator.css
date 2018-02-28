@@ -1,0 +1,190 @@
+/* Template for a .css style file */
+/* Dosis Font */
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,800");
+/* Nanum Pen Script Font Family */
+@import url("https://fonts.googleapis.com/css?family=Nanum+Pen+Script");
+/* Inconsolata Font Family */
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
+/*  Includes padding and border in the element's total width and height 
+	The '*' makes this a property for every tag on the .html file
+*/
+* {
+  box-sizing: border-box; }
+
+/* 
+Code to fill the full page height with content taken from "https://stackoverflow.com/questions/712689/css-div-stretch-100-page-height".
+*/
+html {
+  min-height: 100%;
+  position: relative; }
+
+body {
+  height: 100%;
+  background-color: lightslategray; }
+
+#page-content {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.font-inconsolata {
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 20px;
+  color: #ebebe1;
+  text-align: center; }
+
+.font-dosis-600 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #050f05;
+  text-align: center; }
+
+.font-dosis-800 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+  font-size: 45px;
+  color: black;
+  text-align: right; }
+
+.font-nanum-pen-script {
+  font-family: 'Nanum Pen Script', cursive;
+  font-weight: 400;
+  font-size: 22px;
+  color: white;
+  text-align: center; }
+
+div.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.text-author {
+  color: #0f0f28; }
+
+a {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+#calculator {
+  position: relative;
+  width: 300px;
+  padding: 15px 20px 30px 20px;
+  top: 100px;
+  left: 533px;
+  right: 533px;
+  text-align: center;
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #324b3c;
+  background-color: #141e14;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.5); }
+
+.container-box {
+  display: inline-grid;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 45px 60px 30px 30px 30px 30px 30px;
+  grid-template-areas: 'a a a a' 'b b b b' 'c d e f' 'g h i j' 'l m n o' 'p q r s' 't t u s'; }
+
+.button {
+  display: inline-block;
+  align-self: center;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  user-select: none;
+  background-color: #bebee6;
+  border-radius: 6px;
+  box-shadow: 0px 5px rgba(190, 190, 230, 0.4); }
+
+.button:active {
+  box-shadow: 0 2px rgba(190, 190, 210, 0.5);
+  transform: translateY(5px); }
+
+.a {
+  grid-area: a;
+  align-self: center; }
+
+.b {
+  grid-area: b;
+  padding: 0 12px;
+  border-radius: 12px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #96b496;
+  background-color: #647864;
+  user-select: none; }
+
+.c {
+  grid-area: c;
+  background-color: #d2505a;
+  box-shadow: 0px 5px rgba(210, 80, 90, 0.3); }
+
+.d {
+  grid-area: d;
+  background-color: #d2505a;
+  box-shadow: 0px 5px rgba(210, 80, 90, 0.3); }
+
+.c:active, .d:active {
+  box-shadow: 0 2px rgba(180, 80, 90, 0.5);
+  transform: translateY(5px); }
+
+.e {
+  grid-area: e; }
+
+.f {
+  grid-area: f; }
+
+.g {
+  grid-area: g; }
+
+.h {
+  grid-area: h; }
+
+.i {
+  grid-area: i; }
+
+.j {
+  grid-area: j; }
+
+.l {
+  grid-area: l; }
+
+.m {
+  grid-area: m; }
+
+.n {
+  grid-area: n; }
+
+.o {
+  grid-area: o; }
+
+.p {
+  grid-area: p; }
+
+.q {
+  grid-area: q; }
+
+.r {
+  grid-area: r; }
+
+.s {
+  grid-area: s;
+  padding: 20px 0; }
+
+.t {
+  grid-area: t; }
+
+.u {
+  grid-area: u; }
+
+/*# sourceMappingURL=calculator.css.map */

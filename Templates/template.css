@@ -1,0 +1,98 @@
+/* Template for a .css style file */
+
+/* Ubuntu Font */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700');
+
+/* Nanum Pen Script Font Family */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
+
+/*  Includes padding and border in the element's total width and height 
+	The '*' makes this a property for every tag on the .html file
+*/
+* {
+  box-sizing: border-box;
+}
+
+/* 
+Code to fill the full page height with content taken from "https://stackoverflow.com/questions/712689/css-div-stretch-100-page-height".
+*/
+
+/* Fill page height (html part) */
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+/* Fill page height (body element part) */
+body {
+  height: 100%;
+  background-color: rgb(119, 136, 153);
+}
+
+/* Fill page height (page-content class part) */
+#page-content{
+  position:relative;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow: hidden;
+}
+
+.font-ubuntu-700 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+}
+
+.font-ubuntu-500 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 500;
+}
+
+.font-ubuntu-400 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+}
+
+.font-nanum-pen-script {
+  font-family: 'Nanum Pen Script', cursive;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.text-black {
+  color: black;
+}
+
+.text-author {
+  color: rgb(15, 30, 45);
+}
+
+/* 
+Code taken from "https://css-tricks.com/perfect-full-page-background-image/" to put an image on the background
+*/
+#bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}

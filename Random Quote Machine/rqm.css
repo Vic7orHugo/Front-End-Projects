@@ -1,0 +1,43 @@
+/* Random Quote Machine .css file */
+* {
+  box-sizing: border-box; }
+
+.font-ubuntu {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400; }
+
+.font-nanum {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700; }
+
+.quote-box {
+  display: block;
+  border-radius: 5px;
+  /*margin: 150px 171px;*/
+  margin: 100px auto 10px auto;
+  max-width: 600px;
+  min-width: 400px;
+  height: auto;
+  /*max-height: 400px;
+  min-height: 150px;
+  /*text-align: center;*/
+  padding: 20px 40px; }
+  .quote-box .quote-block {
+    display: block;
+    width: auto;
+    text-align: center;
+    height: 250px;
+    margin: 0;
+    box-sizing: border-box; }
+
+.buttons {
+  margin: 10px auto;
+  height: 15px;
+  flex-direction: row; }
+  .buttons .btn-twitter {
+    float: right; }
+
+footer {
+  margin: 5px auto 100px auto; }
+
+/*# sourceMappingURL=rqm.css.map */
