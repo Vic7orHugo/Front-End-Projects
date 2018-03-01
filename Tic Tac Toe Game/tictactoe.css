@@ -1,0 +1,142 @@
+/* Template for a .css style file */
+
+/* Ubuntu Font */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700');
+
+/* Nanum Pen Script Font Family */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
+
+/*  Includes padding and border in the element's total width and height 
+	The '*' makes this a property for every tag on the .html file
+*/
+* {
+  box-sizing: border-box;
+}
+
+/* 
+Code to fill the full page height with content taken from "https://stackoverflow.com/questions/712689/css-div-stretch-100-page-height".
+*/
+
+/* Fill page height (html part) */
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+/* Fill page height (body element part) */
+body {
+  height: 100%;
+  background-color: rgb(119, 136, 153);
+}
+
+.font-ubuntu-700 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+  font-size: 90px;
+  text-align: center;
+  color: rgb(230, 235, 240);
+}
+
+.font-ubuntu-500 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 500;
+}
+
+.font-ubuntu-400 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+}
+
+.font-nanum-pen-script {
+  font-family: 'Nanum Pen Script', cursive;
+  font-weight: 400;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.text-black {
+  color: black;
+}
+
+.text-author {
+  color: rgb(15, 30, 45);
+}
+
+a {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+.tic-tac-toe {
+  background-color: rgb(15, 40, 15);
+  /*background-color: rgba(230, 235, 240, 0.7);*/
+  margin: 100px auto;
+  max-height: 400px;
+  width: 600px;
+  padding: 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 10px 0px rgb(10, 15, 10);
+}
+
+.content-box {
+  display: grid;
+  margin: 0;
+  grid-gap: 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 120px 120px 120px;
+  grid-template-areas: 'a b c'
+                       'd e f'
+                       'g h i';
+}
+
+.box {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.a {
+  grid-area: a;
+}
+
+.b {
+  grid-area: b;
+}
+
+.c {
+  grid-area: c;
+}
+
+.d {
+  grid-area: d;
+}
+
+.e {
+  grid-area: e;
+}
+
+.f {
+  grid-area: f;
+
+}
+
+.g {
+  grid-area: g;
+}
+
+.h {
+  grid-area: h;
+}
+
+.i {
+  grid-area: i;
+}
