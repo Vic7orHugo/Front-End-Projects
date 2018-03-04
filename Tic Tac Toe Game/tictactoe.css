@@ -34,6 +34,7 @@ body {
   background-color: rgb(119, 136, 153);
 }
 
+/* Permanent marker class */
 .font-marker {
 	font-family: 'Permanent Marker', cursive;
 	font-weight: 700;
@@ -42,17 +43,26 @@ body {
   color: rgba(230, 235, 240, .8);
 }
 
+/* Ubuntu font bold=500 class */
 .font-ubuntu-500 {
-	font-family: 'Ubuntu', sans-serif;
-	font-weight: 500;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  text-align: center;
+  color: rgba(230, 235, 240, .8);
 }
 
-.font-ubuntu-400 {
+/* Ubuntu font class */
+.font-ubuntu {
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 400;
+  font-size: 13px;
+  text-align: center;
+  color: rgb(10, 70, 20);
 }
 
-.font-nanum-pen-script {
+/* Footer font class */
+.font-nanum {
   font-family: 'Nanum Pen Script', cursive;
   font-weight: 400;
   font-size: 22px;
@@ -60,6 +70,7 @@ body {
   color: white;
 }
 
+/* Footer positioning class */
 .footer {
   position: absolute;
   bottom: 0;
@@ -67,25 +78,26 @@ body {
   right: 0;
 }
 
-.text-black {
-  color: black;
+/* Black font class */
+.text-white {
+  color: white;
+  font-size: 50px;
+  font-family: 'Nanum Pen Script';
 }
 
+/* Coder link font class */
 .text-author {
   color: rgb(15, 30, 45);
 }
 
-a {
-  text-decoration: none;
-}
+/* Decoration and hover animation for the my Codepen page link */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-a:hover {
-  text-decoration: underline; 
-}
-
+/* Tic Tac Toe table */
 .tic-tac-toe {
   background-color: rgb(15, 5, 15);
-  margin: 100px auto;
+  margin: 0px auto 100px auto;
   height: 400px;
   width: 400px;
   padding: 20px 20px;
@@ -93,6 +105,12 @@ a:hover {
   box-shadow: 0 10px 10px 0px rgba(10, 15, 10, .7);
 }
 
+/* Hides content */
+.hidden {
+  display: none !important;
+}
+
+/* Grid settings */
 .content-box {
   display: grid;
   height: 360px;
@@ -104,6 +122,7 @@ a:hover {
   grid-template-rows: repeat(3, 1fr);
 }
 
+/* Grid box settings */
 .box {
   display: flex;
   align-items: center;
@@ -111,27 +130,76 @@ a:hover {
   user-select: none;
 }
 
-div.border-right {
-  border-right: 2px solid rgba(250, 250, 250, 0.8);
-}
+/* Classes to create the table borders */
+div.border-right { border-right: 2px solid rgba(250, 250, 250, 0.8); }
+div.border-left { border-left: 2px solid rgba(250, 250, 250, 0.8); }
+div.border-top { border-top: 2px solid rgba(250, 250, 250, 0.8); }
+div.border-bottom { border-bottom: 2px solid rgba(250, 250, 250, 0.8); }
+div.border-all { border: 2px solid rgba(250, 250, 250, 0.8); }
 
-div.border-left {
-  border-left: 2px solid rgba(250, 250, 250, 0.8);
-}
-
-div.border-top {
-  border-top: 2px solid rgba(250, 250, 250, 0.8);
-}
-
-div.border-bottom {
-  border-bottom: 2px solid rgba(250, 250, 250, 0.8);
-}
-
-div.border-all {
-  border: 2px solid rgba(250, 250, 250, 0.8);
-}
-
+/* Content to fill the empty boxes, avoiding vertical collapse */
 div:empty:before {
   content: 'O';
   color: rgba(0, 0, 0, 0);
+}
+
+/* Scoreboard class */
+.scoreboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 100px auto 0px auto;
+  width: 360px;
+}
+
+/* Scoreboard boxes settings */
+.box2 {
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin: auto 10px;
+  background-color: rgb(230, 240, 250); 
+}
+
+/* Turn box style */
+.turn {
+  background-color: rgb(120, 200, 170);
+  color: rgb(100, 120, 180);
+}
+
+/* Settings style */
+.settings {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  justify-content: center;
+}
+
+.box3 {
+  display: flex;
+  justify-content: center;
+  width: 320px;
+  margin: auto 20px;
+}
+
+/* Button 1 without backgroud */
+.button {
+  display: inline-block;
+  width: 130px;
+  height: 70px;
+  margin: auto 15px;
+  align-self: center;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  user-select: none;
+  background-color: rgb(15, 5, 15);
+}
+
+.button:hover {
+  border: 2px dotted rgba(40, 60, 150, 0.9);
+  border-radius: 20px;
 }

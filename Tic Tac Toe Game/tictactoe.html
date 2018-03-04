@@ -6,6 +6,7 @@
 <html>
 
 	<head>
+		<meta charset="UTF-8">
 		<title>TIC TAC TOE</title>
 		<!-- Linking the custom .css file -->
 		<link rel="stylesheet" type="text/css" href="./tictactoe.css">
@@ -13,24 +14,55 @@
 	
 	<body>
 
-		<!-- Tic Tac Toe game border -->
-		<div class="tic-tac-toe font-marker">
-			<div class="content-box">
-				<div id="a" class="box border-right border-bottom"></div>
-				<div id="b" class="box border-left border-right border-bottom"></div>
-				<div id="c" class="box border-left border-bottom"></div>
-				<div id="d" class="box border-top border-right border-bottom"></div>
-				<div id="e" class="box border-all"></div>
-				<div id="f" class="box border-top border-left border-bottom"></div>
-				<div id="g" class="box border-top border-right"></div>
-				<div id="h" class="box border-top border-right border-left"></div>
-				<div id="i" class="box border-top border-left"></div>
+		<!-- Game scoreboard -->
+		<div class="scoreboard font-ubuntu">
+			<div id="1" class="box2"></div>
+			<div id="turn" class="box2 turn"></div>
+			<div id="2" class="box2"></div>
+		</div>
+
+		<!-- Tic Tac Toe background -->
+		<div class="tic-tac-toe">
+
+			<!-- Chosing who to play agains -->
+			<div id="set1" class="settings">
+				<div class="box3">
+					<p class="font-ubuntu-500">How do you want<br>to play against?</p>
+				</div>
+				<div class="box3">
+					<button class="button text-white" value="bot">Bot</button>
+					<button class="button text-white" value="player">Player</button>
+				</div>
+			</div>
+
+			<!-- Chosing to play with X or O -->
+			<div id="set2" class="settings hidden">
+				<div class="box3">
+					<p class="font-ubuntu-500">Would you like<br>to be X or O?</p>
+				</div>
+				<div class="box3">
+					<button class="button text-white" value="X">X</button>
+					<button class="button text-white" value="O">O</button>
+				</div>
+			</div>
+
+			<!-- Tic Tac Toe table -->
+			<div id="table" class="content-box font-marker"> 
+				<div id="a" class="box border-right border-bottom"></div> 
+				<div id="b" class="box border-left border-right border-bottom"></div> 
+				<div id="c" class="box border-left border-bottom"></div> 
+				<div id="d" class="box border-top border-right border-bottom"></div> 
+				<div id="e" class="box border-all"></div> 
+				<div id="f" class="box border-top border-left border-bottom"></div> 
+				<div id="g" class="box border-top border-right"></div> 
+				<div id="h" class="box border-top border-right border-left"></div> 
+				<div id="i" class="box border-top border-left"></div> 
 			</div>
 		</div>
 		    
 	    <!-- Footer line -->
 	    <div class="footer">
-	      <p class="font-nanum-pen-script">Coded by <a class="text-author" href="https://codepen.io/victorhugossml" target="_blank">Victor Hugo Sales</a></p>
+	      <p class="font-nanum">Coded by <a class="text-author" href="https://codepen.io/victorhugossml" target="_blank">Victor Hugo Sales</a></p>
 	    </div>
 
 		<!-- jQuery from Google CDN -->
