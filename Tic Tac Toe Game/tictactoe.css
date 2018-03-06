@@ -81,8 +81,8 @@ body {
 /* Black font class */
 .text-white {
   color: white;
-  font-size: 50px;
-  font-family: 'Nanum Pen Script';
+  font-size: 30px;
+  font-family: 'Permanent Marker', cursive;
 }
 
 /* Coder link font class */
