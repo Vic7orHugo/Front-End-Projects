@@ -1,0 +1,347 @@
+/* 
+	Simon Game .html file
+	Built:  07/03/2018 10:43
+	Author: https://github.com/Vic7orHugo
+
+	UPDATES:
+		*
+ */
+
+/* Ubuntu Font */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700');
+
+/* Nanum Pen Script Font Family */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
+
+/* Electrolize Font */
+@import url('https://fonts.googleapis.com/css?family=Electrolize');
+
+/*  Includes padding and border in the element's total width and height 
+	The '*' makes this a property for every tag on the .html file
+*/
+* {
+  box-sizing: border-box;
+}
+
+/* 
+Code to fill the full page height with content taken from "https://stackoverflow.com/questions/712689/css-div-stretch-100-page-height".
+*/
+
+/* Fill page height (html part) */
+html {
+  min-height: 100%;
+  position: relative;
+/* Code taken from "https://css-tricks.com/perfect-full-page-background-image/" to put an image on the background */
+  background: url(http://4.bp.blogspot.com/-23brwS4yU_E/UsnJmnC-W_I/AAAAAAAAAwU/sduTzZqZOgU/s1600/Fundo+de+Madeira.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Fill page height (body element part) */
+body {
+  height: 100%;
+}
+
+/* Font title styling */
+.font-title {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+	font-size: 55px;
+}
+
+/* UI font styling */
+.font-ui {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+	font-size: 11px;
+}
+
+/* Display font styling */
+.font-display {
+	font-family: 'Electrolize', sans-serif;
+	font-size: 30px;
+	color: rgba(244, 41, 65, 0.3);
+}
+
+/* Registered trademark symbom font */
+.tiny {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+	font-size: 17px;
+	padding-bottom: 30px;
+}
+
+/* Footer general font */
+.font-nanum {
+  font-family: 'Nanum Pen Script', cursive;
+  font-weight: 400;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+}
+
+/* Footer positioning */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Link color font */
+.text-author {
+  color: rgb(150, 160, 180);
+}
+
+/* Decoration and hover animation for the my Codepen page link */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Game Container styling */
+.game {
+	position: relative;
+	display: grid;
+	height: 500px;
+	width: 500px;
+	background-color: #000;
+	margin: 50px auto;
+	border: 30px solid rgb(15, 20, 10);
+	border-radius: 50%;
+	grid-gap: none;
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-columns: repeat(2, 1fr);
+	user-select: none;
+	-moz-user-select: none;
+	box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5)
+}
+
+/* Big flashy buttons as flexbox */
+.game-buttons {
+	display: flex;
+	margin: none;
+}
+
+/* Classes to create the table borders */
+div.border-right { border-right: 15px solid rgb(15, 20, 10); }
+div.border-left { border-left: 15px solid rgb(15, 20, 10); }
+div.border-top { border-top: 15px solid rgb(15, 20, 10); }
+div.border-bottom { border-bottom: 15px solid rgb(15, 20, 10); }
+
+/* Big buttons colors: Green */
+.btn-green {
+	background-color: rgba(23, 219, 26, 0.6);
+	border-top-left-radius: 100%;
+}
+
+/* Big buttons colors: Red */
+.btn-red {
+	background-color: rgba(255, 17, 0, 0.6);
+	border-top-right-radius: 100%;
+}
+
+/* Big buttons colors: Yellow */
+.btn-yellow {
+	background-color: rgba(255, 242, 0, 0.6);
+	border-bottom-left-radius: 100%;
+}
+
+/* Big buttons colors: Blue */
+.btn-blue {
+	background-color: rgba(0, 75, 255, 0.6);
+	border-bottom-right-radius: 100%;
+}
+
+/* Big buttons colors: Green */
+/* Content to fill the empty boxes, avoiding vertical collapse 
+div:empty:before {
+  content: 'O';
+  color: rgba(0, 0, 0, 0);
+}*/
+
+
+/* Game settings styling all on flexbox :::: The central circle */
+.game-settings {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	top: 95px;
+	left: 95px;
+	text-align: center;
+	height: 250px;
+	width: 250px;
+	border: 15px solid rgb(15, 20, 10);
+	border-radius: 50%;
+	background-color: rgb(200, 200, 200);
+	z-index: 5;
+}
+
+/* Game title styling section */
+.game-title {
+	display: flex;
+	height: 45%;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+/* Game User Interface section */
+.game-ui {
+	display: flex;
+	flex-direction: row;
+	height: 25%;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0 20px;
+}
+
+/* Game UI count box styling section */
+.game-ui-count-box {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Game UI count display */
+.ui-display {
+	display: flex;
+	height: 40px;
+	width: 60px;
+	background-color: rgb(10, 15, 10);
+	border: 4px solid rgb(40, 40, 40);
+	border-radius: 7px;
+	margin-top: 5px;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Game UI start box styling section */
+.game-ui-start-box {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+/* Game UI start button */
+.ui-start-button {
+	display: flex;
+	height: 30px;
+	width: 30px;
+	background-color: rgb(216, 31, 42);
+	border: 4px solid rgb(60, 60, 60);
+	border-radius: 50%;
+	box-shadow: 0 2px 2px 0 rgb(0, 0, 0, 0.6);
+	margin-top: 13px;
+}
+
+/* Start button active */
+.ui-start-button:active {
+	transform: translateY(1px);
+	box-shadow: 0 1px 1px 0 rgb(0, 0, 0, 0.6);
+}
+
+/* Game UI stric box styling section */
+.game-ui-strict-box {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Strict Mode indicator */
+.ui-strict-mode-indicator {
+	display: flex;
+	height: 10px;
+	width: 10px;
+	background-color: black;
+	border: 2px solid rgb(40, 40, 40);
+	border-radius: 50%;
+	margin-bottom: 3px; 
+}
+
+/* Game UI strict button */
+.ui-strict-button {
+	display: flex;
+	height: 30px;
+	width: 30px;
+	background-color: rgb(242, 242, 37);
+	border: 4px solid rgb(60, 60, 60);
+	border-radius: 50%;
+	box-shadow: 0 2px 2px 0 rgb(0, 0, 0, 0.6);
+}
+
+/* Strict button active */
+.ui-strict-button:active {
+	transform: translateY(1px);
+	box-shadow: 0 1px 1px 0 rgb(0, 0, 0, 0.6);
+}
+
+/* Game UI subtitles */
+.ui-subtitles {
+	display: flex;
+	flex-direction: row;
+	height: 15%;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0 20px;
+}
+
+/* Game UI count display subtitle */
+.ui-display-subtitle {
+	display: flex;
+	width: 40%;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Game UI start button subtitle */
+.ui-start-button-subtitle {
+	display: flex;
+	width: 30%;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Game UI strict button subtitle */
+.ui-strict-button-subtitle {
+	display: flex;
+	width: 30%;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ON/OFF switch section */
+.game-switch {
+	display: flex;
+	height: 15%;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 20px;
+}
+
+/* ON/OFF switch container */
+.button-box {
+	position: relative;
+	height: 20px;
+	width: 40px;
+	background-color: rgb(10, 15, 10);
+	border: 2px solid rgb(20, 30, 20);
+	border-radius: 4px;
+	margin: auto 5px;
+}
+
+/* ON/OFF switch */
+.dash-button {
+	position: absolute;
+	left: 0;
+	height: 100%;
+	background-color: rgb(50, 100, 170);
+	width: 50%;
+	border: 1px solid rgb(120, 120, 120);
+	border-radius: 4px;
+}

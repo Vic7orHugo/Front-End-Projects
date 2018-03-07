@@ -3,7 +3,7 @@
    UPDATE nº 1 (05/03/2018 10:35): Adding more functionalities
    UPDATE nº 2 (06/03/2018 11:46): Adding bot
 								   Note: The bots actions always have some delay, so the player can see what the bot is doing
- 	JUMP TO LINE 314 IF YOU WANT TO TAKE A LOOK AT THE AI CODE
+   JUMP TO LINE 314 IF YOU WANT TO TAKE A LOOK AT THE AI CODE
  */
 
 // Global variables

@@ -58,6 +58,8 @@ body {
   font-family: 'Nanum Pen Script', cursive;
   font-weight: 400;
   font-size: 22px;
+  text-align: center;
+  color: white;
 }
 
 .footer {
@@ -74,6 +76,10 @@ body {
 .text-author {
   color: rgb(15, 30, 45);
 }
+
+/* Decoration and hover animation for the my Codepen page link */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 /* 
 Code taken from "https://css-tricks.com/perfect-full-page-background-image/" to put an image on the background

@@ -1,0 +1,79 @@
+<!-- 
+	Simon Game .html file
+	Built:  07/03/2018 10:42
+	Author: https://github.com/Vic7orHugo
+
+	UPDATES:
+		*
+-->
+
+<!DOCTYPE html>
+<!-- Template for a .html file -->
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Simon&reg Game</title>
+		<!-- Linking the custom .css file -->
+		<link rel="stylesheet" type="text/css" href="./simon_game.css">
+	</head>
+	
+	<body>
+
+		<!-- Game section -->
+		<div id="game" class="game">
+			<!-- Big flashy buttons section -->
+			<div id="green" class="game-buttons border-right border-bottom btn-green"></div>
+			<div id="red" class="game-buttons border-left border-bottom btn-red"></div>
+			<div id="yellow" class="game-buttons border-right border-top btn-yellow"></div>
+			<div id="blue" class="game-buttons border-left border-top btn-blue"></div>
+			<!-- Central circle section -->
+			<div class="game-settings">
+				<!-- Title -->
+				<div class="game-title font-title">Simon<span class="tiny">&reg</span></div>
+				<!-- UI devices -->
+				<div class="game-ui font-ui">
+					<!-- Display -->
+					<div class="game-ui-count-box">
+						<div id="display" class="ui-display font-display">--</div>
+					</div>
+					<!-- Start Button -->
+					<div class="game-ui-start-box">
+						<div id="start-button" class="ui-start-button"></div>
+					</div>
+					<!-- Strict Mode Button and Indicator -->
+					<div class="game-ui-strict-box">
+						<div id="strict-mode-indicator" class="ui-strict-mode-indicator"></div>
+						<div id="strict-mode-button" class="ui-strict-button"></div>
+					</div>
+				</div>
+				<!-- UI subtitles -->
+				<div class="ui-subtitles font-ui">
+					<div class="ui-display-subtitle">COUNT</div> 
+					<div class="ui-start-button-subtitle">START</div> 
+					<div class="ui-strict-button-subtitle">STRICT</div>
+				</div>
+				<!-- ON/OFF switch -->
+				<div class="game-switch font-ui">
+					OFF
+					<div class="button-box">
+						<div class="dash-button"></div>
+					</div>
+					ON
+				</div>
+			</div>
+		</div>
+		    
+	    <!-- Footer line -->
+	    <div class="footer">
+	      	<p class="font-nanum">Coded by <a class="text-author" href="https://codepen.io/victorhugossml" target="_blank">Victor Hugo Sales</a></p>
+	    </div>
+
+		<!-- jQuery from Google CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Linking the .js file. This is done in the end of the .htlm file so the page loads faster. -->
+		<script src="./simon_game.js" type="text/javascript"></script>
+
+	</body>
+
+</html>
