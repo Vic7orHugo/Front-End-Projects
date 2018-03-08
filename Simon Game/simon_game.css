@@ -1,10 +1,12 @@
 /* 
-	Simon Game .html file
+	Simon Game .css file
 	Built:  07/03/2018 10:43
 	Author: https://github.com/Vic7orHugo
 
 	UPDATES:
-		*
+		* (08/03/2018 18:31) - The play buttons (big colored ones) now change to "cursor:pointer" when the game starts,
+							   and go back to default when the game is turned off;
+							 - Added "cursor:pointer" to the "start and strict" buttons, and to the ON/OFF switch.
  */
 
 /* Ubuntu Font */
@@ -62,7 +64,7 @@ body {
 .font-display {
 	font-family: 'Electrolize', sans-serif;
 	font-size: 30px;
-	color: rgba(244, 41, 65, 0.3);
+	color: rgba(244, 41, 65, 0.1);
 }
 
 /* Registered trademark symbom font */
@@ -121,6 +123,7 @@ a:hover { text-decoration: underline; }
 .game-buttons {
 	display: flex;
 	margin: none;
+	cursor: default;
 }
 
 /* Classes to create the table borders */
@@ -236,6 +239,7 @@ div:empty:before {
 	border-radius: 50%;
 	box-shadow: 0 2px 2px 0 rgb(0, 0, 0, 0.6);
 	margin-top: 13px;
+	cursor: pointer;
 }
 
 /* Start button active */
@@ -273,6 +277,7 @@ div:empty:before {
 	border: 4px solid rgb(60, 60, 60);
 	border-radius: 50%;
 	box-shadow: 0 2px 2px 0 rgb(0, 0, 0, 0.6);
+	cursor: pointer;
 }
 
 /* Strict button active */
@@ -333,6 +338,7 @@ div:empty:before {
 	border: 2px solid rgb(20, 30, 20);
 	border-radius: 4px;
 	margin: auto 5px;
+	cursor: pointer;
 }
 
 /* ON/OFF switch */
