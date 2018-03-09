@@ -6,6 +6,9 @@
 	UPDATES:
 		* (08/03/2018 19:49) - Added all the needed functionality for the game. The only one
 							   thing left to do is to implement the interation sounds;
+		* (09/03/2018 10:36) - Added Win condition and message;	
+							 - Added sounds for playing and clicking the buttons, and for losing
+							   with strict mode ON or OFF;			
  */
 
  class Color { // Color class
@@ -46,11 +49,10 @@ $(document).ready(function() {
 	let status = "off"; 	// Game status: ON/OFF
 	let strictMode = "off"; // Strict mode: ON/OFF
 	let round = 1;			// Game current round/count
-	let finalRound = 40;	// Final game round/count
+	let finalRound = 20;	// Final game round/count
 	let buttons = ["green", "red", "yellow", "blue"]; // Buttons
 	let btnClicks = 0;		// Number of buttons clicks
 	let sequence;			// Button Sequence
-	//let buttonSelector;		// ID button selector
 	let random;				// Random number between 0 and 3
 
 	// Changes the position of the ON/OFF switch
@@ -108,25 +110,37 @@ $(document).ready(function() {
 			let selector = "#" + btn;
 			blink(btn, turn);
 			if (btn !== sequence[btnClicks]) {
-				displayFlick("!!", 50);
+				displayFlick("!!", 200);
 				turn = "watch";
 				if (strictMode === "on") {
+					$.playSound("https://d1u5p3l4wpay3k.cloudfront.net/dota2_gamepedia/e/ef/Nev_laugh_04.mp3");
 					sequence = [];
 					random = Math.floor(Math.random() * buttons.length);
 					sequence.push(buttons[random]);
 					round = 1;
+				} else {
+					$.playSound("https://d1u5p3l4wpay3k.cloudfront.net/dota2_gamepedia/e/ea/Nev_death_03.mp3");
 				}
 				btnClicks = 0;
-				setTimeout(function() {buttonsToPress(sequence, turn, round);}, 1500);
+				setTimeout(function() {buttonsToPress(sequence, turn, round);}, 3000);
 			} else {
 				btnClicks++;
-				if (btnClicks === round) {
+				if (btnClicks === round && round < finalRound) {
 					round++;
 					random = Math.floor(Math.random() * buttons.length);
 					sequence.push(buttons[random]);
 					turn = "watch";
 					btnClicks = 0;
 					setTimeout(function() {buttonsToPress(sequence, turn, round);}, 1000);
+				} else if (round === finalRound && btnClicks === round) {
+					displayFlick("WIN", 150);
+					sequence = [];
+					btnClicks = 0;
+					round = 1;
+					turn = "watch";
+					random = Math.floor(Math.random() * buttons.length);
+					sequence.push(buttons[random]);
+					setTimeout(function() {buttonsToPress(sequence, turn, round);}, 4000);
 				}
 			}		
 		}
@@ -141,24 +155,28 @@ function blink(selectedColor, timeTo) {
 		switch (selectedColor) {
 			case "green":
 				$(buttonSelector).css("background-color", green.rgbOn);
+				$.playSound(green.getSound);
 				setTimeout(function() {
 					$(buttonSelector).css("background-color", green.rgbOff);
 				}, 900);
 				break;
 			case "red":
 				$(buttonSelector).css("background-color", red.rgbOn);
+				$.playSound(red.getSound);
 				setTimeout(function() {
 					$(buttonSelector).css("background-color", red.rgbOff);
 				}, 900);
 				break;
 			case "yellow":
 				$(buttonSelector).css("background-color", yellow.rgbOn);
+				$.playSound(yellow.getSound);
 				setTimeout(function() {
 					$(buttonSelector).css("background-color", yellow.rgbOff);
 				}, 900);
 				break;
 			case "blue":
 				$(buttonSelector).css("background-color", blue.rgbOn);
+				$.playSound(blue.getSound);
 				setTimeout(function() {
 					$(buttonSelector).css("background-color", blue.rgbOff);
 				}, 900);
@@ -168,27 +186,31 @@ function blink(selectedColor, timeTo) {
 		switch (selectedColor) {
 			case "green":
 				$(buttonSelector).css("background-color", green.rgbOn);
+				$.playSound(green.getSound);
 				setTimeout(function() {
 					$(buttonSelector).css("background-color", green.rgbOff);
-				}, 120);
+				}, 200);
 				break;
 			case "red":
 				$(buttonSelector).css("background-color", red.rgbOn);
+				$.playSound(red.getSound);
 				setTimeout(function() {
 					$(buttonSelector).css("background-color", red.rgbOff);
-				}, 120);
+				}, 200);
 				break;
 			case "yellow":
 				$(buttonSelector).css("background-color", yellow.rgbOn);
+				$.playSound(yellow.getSound);
 				setTimeout(function() {
 					$(buttonSelector).css("background-color", yellow.rgbOff);
-				}, 120);
+				}, 200);
 				break;
 			case "blue":
 				$(buttonSelector).css("background-color", blue.rgbOn);
+				$.playSound(blue.getSound);
 				setTimeout(function() {
 					$(buttonSelector).css("background-color", blue.rgbOff);
-				}, 120);
+				}, 200);
 				break;
 		}
 	}

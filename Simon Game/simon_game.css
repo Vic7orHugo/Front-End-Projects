@@ -7,6 +7,7 @@
 		* (08/03/2018 18:31) - The play buttons (big colored ones) now change to "cursor:pointer" when the game starts,
 							   and go back to default when the game is turned off;
 							 - Added "cursor:pointer" to the "start and strict" buttons, and to the ON/OFF switch.
+ 		* (09/03/2018 10:37) - Enlarged display to fit the "WIN" message when the player wins;
  */
 
 /* Ubuntu Font */
@@ -211,7 +212,7 @@ div:empty:before {
 .ui-display {
 	display: flex;
 	height: 40px;
-	width: 60px;
+	width: 70px;
 	background-color: rgb(10, 15, 10);
 	border: 4px solid rgb(40, 40, 40);
 	border-radius: 7px;
