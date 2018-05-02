@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <!-- Template for a .html file -->
-<html>
+<html lang="en">
 
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dota 2 Pomodoro Clock</title>
     <!-- Linking the custom .css file -->
-    <link rel="stylesheet" type="text/css" href="./dota2_pomodoro_clock.css">
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">
   </head>
 
   <body>
@@ -23,26 +25,26 @@
         <!-- Break length section -->
         <div class="box a">
           <p class="font-ubuntu-400">BREAK LENGTH</p>
-          <button id="br" class="button font-ubuntu-600" value="-">-</button>
+          <button id="br" class="button font-ubuntu-600" value="-" onclick="handleClick(event)">-</button>
           <span id="break" class="font-ubuntu-400">5</span>
-          <button id="br" class="button font-ubuntu-600" value="+">+</button>
+          <button id="br" class="button font-ubuntu-600" value="+" onclick="handleClick(event)">+</button>
         </div>
         <!-- Reset button section -->
         <div class="box b">
-          <button value="reset" class="font-ubuntu-600 button">RESET SESSION</button>
+          <button value="reset" class="font-ubuntu-600 button" onclick="handleClick(event)">RESET SESSION</button>
         </div>
         <!-- Session length section -->
         <div class="box c">
           <p class="font-ubuntu-400">SESSION LENGTH<br /></p>
-          <button id="sess" class="button font-ubuntu-600" value="-">-</button>
+          <button id="sess" class="button font-ubuntu-600" value="-" onclick="handleClick(event)">-</button>
           <span id="session" class="font-ubuntu-400">25</span>
-          <button id="sess" class="button font-ubuntu-600" value="+">+</button> 
+          <button id="sess" class="button font-ubuntu-600" value="+" onclick="handleClick(event)">+</button> 
         </div>
       </div>
       
       <!-- Timer section -->
       <div id="clock">
-        <button value="stop-go" class="button">
+        <button value="stop-go" class="button" onclick="handleClick(event)">
           <p id="session-name" class="font-ubuntu-700">Session<br /></p>
           <p id="timer" class="font-ubuntu-700">25<br /></p>
         </button>
@@ -56,9 +58,9 @@
     </div>
 
     <!-- jQuery from Google CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <!-- Linking the .js file. This is done in the end of the .htlm file so the page loads faster. -->
-    <script src="./dota2_pomodoro_clock.js" type="text/javascript"></script>
+    <script src="./scripts/clock_logic.js"></script>
 
   </body>
 
