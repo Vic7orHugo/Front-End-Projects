@@ -8,6 +8,7 @@
 							   and go back to default when the game is turned off;
 							 - Added "cursor:pointer" to the "start and strict" buttons, and to the ON/OFF switch.
  		* (09/03/2018 10:37) - Enlarged display to fit the "WIN" message when the player wins;
+ 		* (03/05/2018 19:45) - Removed "cursor" property from the class ".game-buttons";
  */
 
 /* Ubuntu Font */
@@ -124,7 +125,6 @@ a:hover { text-decoration: underline; }
 .game-buttons {
 	display: flex;
 	margin: none;
-	cursor: default;
 }
 
 /* Classes to create the table borders */

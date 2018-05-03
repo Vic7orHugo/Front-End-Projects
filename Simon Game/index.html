@@ -4,18 +4,23 @@
 	Author: https://github.com/Vic7orHugo
 
 	UPDATES:
-		*
+		* (03/05/2018 19:45) - Added audio element tags to play the sounds;
+							 - Added attributes to handle some button clicks;
+							 - Added meta tag to add some responsive behavior;
+							 - Added language;
+							 - Updated footer;
 -->
 
 <!DOCTYPE html>
 <!-- Template for a .html file -->
-<html>
+<html lang="en">
 
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Simon&reg Game</title>
 		<!-- Linking the custom .css file -->
-		<link rel="stylesheet" type="text/css" href="./simon_game.css">
+		<link rel="stylesheet" type="text/css" href="./css/layout.css">
 	</head>
 	
 	<body>
@@ -23,10 +28,10 @@
 		<!-- Game section -->
 		<div id="game" class="game">
 			<!-- Big flashy buttons section -->
-			<div id="green" class="game-buttons border-right border-bottom btn-green"></div>
-			<div id="red" class="game-buttons border-left border-bottom btn-red"></div>
-			<div id="yellow" class="game-buttons border-right border-top btn-yellow"></div>
-			<div id="blue" class="game-buttons border-left border-top btn-blue"></div>
+			<div id="green" class="game-buttons border-right border-bottom btn-green" onclick="handleGameButtons(event)"></div>
+			<div id="red" class="game-buttons border-left border-bottom btn-red" onclick="handleGameButtons(event)"></div>
+			<div id="yellow" class="game-buttons border-right border-top btn-yellow" onclick="handleGameButtons(event)"></div>
+			<div id="blue" class="game-buttons border-left border-top btn-blue" onclick="handleGameButtons(event)"></div>
 			<!-- Central circle section -->
 			<div class="game-settings">
 				<!-- Title -->
@@ -66,15 +71,19 @@
 		    
 	    <!-- Footer line -->
 	    <div class="footer">
-	      	<p class="font-nanum">Coded by <a class="text-author" href="https://codepen.io/victorhugossml" target="_blank">Victor Hugo Sales</a></p>
+	      	<p class="font-nanum"><a class="text-author" href="https://codepen.io/victorhugossml" target="_blank">Victor Hugo</a> &#169;2018</p>
 	    </div>
 
+		<!-- Audio tag elements -->
+		<audio id="buttonAudio" controls="none" preload="auto" style="display:none;"></audio>
+		<audio id="missAudio" controls="none" preload="auto" style="display:none;"></audio>
+
 		<!-- jQuery from Google CDN -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 		<!-- Linking the .js file. This is done in the end of the .htlm file so the page loads faster. -->
-		<script src="./simon_game.js" type="text/javascript"></script>
+		<script src="./scripts/game_logic.js"></script>
 		<!-- Script to play the buttons sounds -->
-		<script src="https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js" type="text/javascript"></script>
+		<!-- <script src="https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js" type="text/javascript"></script> -->
 		
 	</body>
 

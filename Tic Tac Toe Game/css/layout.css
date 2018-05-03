@@ -203,3 +203,17 @@ div:empty:before {
   border: 2px dotted rgba(40, 60, 150, 0.9);
   border-radius: 20px;
 }
+
+.fadeout {
+  opacity: 0;
+  transition: .7s ease;
+}
+
+.fadein {
+  opacity: 1 !important;
+  transition: .7s ease;
+}
+
+#set2, #table {
+  opacity: 0;
+}
