@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>JS Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Linking the custom .css file -->
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">
+  </head>
+
+  <body>
+
+      <!-- Calculator section -->
+      <!-- Here, I'm using CSS Grid Layout -->
+      <div id="calculator" class="container-box">
+        <div id="title" class="box a">
+          <p class="font-inconsolata">BASIC CALCULATOR</p>
+        </div>
+        <div class="box b font-dosis-800"></div>
+        <button class="box c font-dosis-600 button" value="AC" onclick="handleButton(event)">AC</button>
+        <button class="box d font-dosis-600 button" value="CE" onclick="handleButton(event)">CE</button>
+        <button class="box e font-dosis-600 button" value="/" onclick="handleButton(event)">/</button>
+        <button class="box f font-dosis-600 button" value="*" onclick="handleButton(event)">*</button>
+        <button class="box g font-dosis-600 button" value="7" onclick="handleButton(event)">7</button>
+        <button class="box h font-dosis-600 button" value="8" onclick="handleButton(event)">8</button>
+        <button class="box i font-dosis-600 button" value="9" onclick="handleButton(event)">9</button>
+        <button class="box j font-dosis-600 button" value="-" onclick="handleButton(event)">-</button>
+        <button class="box l font-dosis-600 button" value="4" onclick="handleButton(event)">4</button>
+        <button class="box m font-dosis-600 button" value="5" onclick="handleButton(event)">5</button>
+        <button class="box n font-dosis-600 button" value="6" onclick="handleButton(event)">6</button>
+        <button class="box o font-dosis-600 button" value="+" onclick="handleButton(event)">+</button>
+        <button class="box p font-dosis-600 button" value="1" onclick="handleButton(event)">1</button>
+        <button class="box q font-dosis-600 button" value="2" onclick="handleButton(event)">2</button>
+        <button class="box r font-dosis-600 button" value="3" onclick="handleButton(event)">3</button>
+        <button class="box s font-dosis-600 button" value="=" onclick="handleButton(event)">=</button>
+        <button class="box t font-dosis-600 button" value="0" onclick="handleButton(event)">0</button>
+        <button class="box u font-dosis-600 button" value="." onclick="handleButton(event)">.</button>
+      </div>
+      
+      <!-- Footer line -->
+      <div class="footer">
+        <p class="font-nanum-pen-script"><a class="text-author" href="https://codepen.io/victorhugossml" target="_blank">Victor Hugo</a> &#169;2018</p>
+      </div>    
+
+      <!-- jQuery from Google CDN -->
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+      <!-- Linking the .js file. This is done in the end of the .htlm file so the page loads faster. -->
+      <script src="./scripts/general_functionality.js"></script>
+  </body>
+
+</html>

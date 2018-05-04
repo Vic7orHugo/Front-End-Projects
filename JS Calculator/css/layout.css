@@ -1,9 +1,7 @@
-/* Template for a .css style file */
 /* Dosis Font */
 @import url("https://fonts.googleapis.com/css?family=Dosis:400,600,800");
 /* Nanum Pen Script Font Family */
 @import url("https://fonts.googleapis.com/css?family=Nanum+Pen+Script");
-/* Inconsolata Font Family */
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
 /*  Includes padding and border in the element's total width and height 
 	The '*' makes this a property for every tag on the .html file
@@ -73,11 +71,12 @@ a:hover {
 
 #calculator {
   position: relative;
-  width: 300px;
-  padding: 15px 20px 30px 20px;
+  left: 50%;
   top: 100px;
-  left: 533px;
-  right: 533px;
+  margin-left: -150px;
+  width: 300px;
+  height: auto;
+  padding: 15px 20px 30px 20px;
   text-align: center;
   border-radius: 30px;
   border-style: solid;
@@ -187,4 +186,4 @@ a:hover {
 .u {
   grid-area: u; }
 
-/*# sourceMappingURL=calculator.css.map */
+/*# sourceMappingURL=layout.css.map */

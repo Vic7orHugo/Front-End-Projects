@@ -1,4 +1,7 @@
-// Template for a JavaScript (.js) file using jQuery
+/*
+    general_functionality.jquery.js - Implements the calculator functionality using jQuery to manipulate the DOM.
+    Feb 2018
+ */
 
 // Global variables
 let output = 0;
