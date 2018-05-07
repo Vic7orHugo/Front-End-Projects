@@ -96,11 +96,15 @@ a:hover { text-decoration: underline; }
 
 /* Tic Tac Toe table */
 .tic-tac-toe {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  margin-bottom: 100px;
+  margin-left: -200px;
   background-color: rgb(15, 5, 15);
-  margin: 0px auto 100px auto;
   height: 400px;
   width: 400px;
-  padding: 20px 20px;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 10px 10px 0px rgba(10, 15, 10, .7);
 }
@@ -145,10 +149,13 @@ div:empty:before {
 
 /* Scoreboard class */
 .scoreboard {
+  position: relative;
+  top: 78px;
+  left: 50%;
+  margin-left: -180px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 100px auto 0px auto;
   width: 360px;
 }
 
@@ -188,7 +195,7 @@ div:empty:before {
 .button {
   display: inline-block;
   width: 130px;
-  height: 70px;
+  height: auto;
   margin: auto 15px;
   align-self: center;
   cursor: pointer;
@@ -197,11 +204,12 @@ div:empty:before {
   border: none;
   user-select: none;
   background-color: rgb(15, 5, 15);
+  border-radius: 20px;
 }
 
 .button:hover {
-  border: 2px dotted rgba(40, 60, 150, 0.9);
-  border-radius: 20px;
+  background-color: #003152;
+  transition: 1s ease;
 }
 
 .fadeout {
@@ -216,4 +224,26 @@ div:empty:before {
 
 #set2, #table {
   opacity: 0;
+}
+
+.results {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 360px;
+  width: 360px;
+  margin: 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #00A572;
+}
+
+.noclick {
+  pointer-events: none;
+}
+
+#result-message {
+  color: #003152;
 }

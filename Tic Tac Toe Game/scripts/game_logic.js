@@ -104,9 +104,12 @@ const handleOption = (event) => {
 			document.querySelector("#set2").classList.remove("fadein");
 			document.querySelector("#set2").classList.add("fadeout");
 			setTimeout(() => {document.querySelector("#set2").classList.add("hidden")}, 700);
-			document.querySelector("#table").innerHTML = table;		
+			document.querySelector("#table").innerHTML += table;		
 			setTimeout(() => {document.querySelector("#table").classList.remove("hidden");}, 0);
-			setTimeout(() => {document.querySelector("#table").classList.add("fadein");}, 800);		
+			setTimeout(() => {
+				document.querySelector("#table").classList.add("fadein");
+				document.querySelector("#scoreboard").classList.remove("hidden");
+			}, 800);		
 			if (playerChoice === "bot") {
 				player.setLetter("X");
 				bot.setLetter("O");
@@ -130,9 +133,12 @@ const handleOption = (event) => {
 			document.querySelector("#set2").classList.remove("fadein");
 			document.querySelector("#set2").classList.add("fadeout");
 			setTimeout(() => {document.querySelector("#set2").classList.add("hidden")}, 700);
-			document.querySelector("#table").innerHTML = table;		
+			document.querySelector("#table").innerHTML += table;		
 			setTimeout(() => {document.querySelector("#table").classList.remove("hidden");}, 0);
-			setTimeout(() => {document.querySelector("#table").classList.add("fadein");}, 800);		
+			setTimeout(() => {
+				document.querySelector("#table").classList.add("fadein");
+				document.querySelector("#scoreboard").classList.remove("hidden");
+			}, 800);	
 			if (playerChoice === "bot") {
 				player.setLetter("O");
 				bot.setLetter("X");
@@ -211,12 +217,12 @@ function play(select) {
 		if (winTest()) { // Checks if a player won
 			// Delay for the popup window that shows who won
 			if (playerChoice === "player"){
-				setTimeout(function(){ alert('Player ' + turn.toString() + ' won!'); }, 100);
+				resultMessage('Player ' + turn.toString() + 'won!');
 			} else {
 				if (turn < 2) {
-					setTimeout(function(){ alert('The Player won!'); }, 100);
+					resultMessage('The Player won!');
 				} else {
-					setTimeout(function(){ alert('The Computer won!'); }, 100);
+					resultMessage('The Computer won!');
 				}
 			}
 			// Clears the board after confirming the winner
@@ -237,24 +243,18 @@ function play(select) {
 					} else {
 						bot.addPoint();// Gives a point to the winner
 						document.getElementById(turn.toString()).innerHTML = "Computer: " + bot.getPoints;
-						// Calls the bot after he wins
-						setTimeout(function() {play(selectors[minimax(combinations, bot.getLetter).index]);}, 800);
 					}
 				}
-			}, 120);
+			}, 1000);
 			return null;
 		} else if (round === 9) { // Checks a draw match only after the whole table has been filled
 			// Shows the confirmation popup window for a draw
-			setTimeout(function(){ alert('It was a draw!'); }, 100);
+			resultMessage('It was a draw!');
 			// Clears the board after confirming the result
 			setTimeout(function(){ 
 				cleanBoard(); 
 				changeTurn();
-				// Calls the bot if it is his turn after the tie
-				if (playerChoice === "bot" && turn === 2) {
-					setTimeout(function() {play(selectors[minimax(combinations, bot.getLetter).index]);}, 800);
-				}
-			}, 120);
+			}, 1000);
 			return null;
 		}
 		// Changes the current turn
@@ -309,6 +309,22 @@ function changeTurn() {
 		}
 	}
 }
+
+const resultMessage = (message) => {
+	setTimeout(() => {
+		document.querySelector("#results").style.opacity = "1";
+		document.querySelector("#results").classList.remove("noclick");
+		document.getElementById("result-message").innerHTML = message;
+	},500);
+}
+
+// Function to handle the "play again" button
+const playAgain = () => {
+	document.querySelector("#results").style.opacity = "0";
+	document.querySelector("#results").classList.add("noclick");
+	// Calls the bot after he wins or if it is its turn to play after a tie
+	if (playerChoice === "bot" && turn === 2) setTimeout(function() {play(selectors[minimax(combinations, bot.getLetter).index]);}, 800); 
+};
 
 ////////////////////////////////////////////////////////////////////////q
 /* 

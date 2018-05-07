@@ -16,7 +16,7 @@
 	<body>
 
 		<!-- Game scoreboard -->
-		<div class="scoreboard font-ubuntu">
+		<div id="scoreboard" class="scoreboard font-ubuntu hidden">
 			<div id="1" class="box2"></div>
 			<div id="turn" class="box2 turn"></div>
 			<div id="2" class="box2"></div>
@@ -58,6 +58,16 @@
 				<div id="g" class="box border-top border-right"></div> 
 				<div id="h" class="box border-top border-right border-left"></div> 
 				<div id="i" class="box border-top border-left"></div>  -->
+				<div id="results" class="results noclick">
+					<div class="settings">
+						<div class="box3">
+							<p id="result-message" class="font-ubuntu-500""></p>
+						</div>
+						<div class="box3">
+							<button id="play" class="button text-white" onclick="playAgain()">PLAY AGAIN?</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		    
