@@ -140,6 +140,12 @@ a:hover {
   border-radius: 6px;
 }
 
+button[value="reset"] {
+  color: white;
+  background-color: crimson;
+  padding: 5px;
+}
+
 span {
   margin-right: 7px;
   margin-left: 7px;
@@ -159,19 +165,34 @@ button[value=stop-go] {
   width: 240px;
   border-radius: 50%;
   border-style: solid;
-  border-color: rgba(150, 150, 180, 0.6);
+  border-color: #444444;
 }
 
 button[value='-'], [value='+'] {
   font-size: 25px;
   padding: 4px 8px;
+  color: #00A86B;
+  background-color: rgb(245, 245, 245);
   width: 40px;
   height: auto;
   border-radius: 50%;
-  border-style: solid;
-  border-width: 2px;
-  border-color: rgba(240, 240, 240, 0.5);
   text-align: center;
+}
+
+button[value="+"]:hover {
+  color: rgb(245, 245, 245);
+  background-color: purple;
+  transition: .7s ease;
+}
+
+button[value="-"]:hover {
+  color: rgb(245, 245, 245);
+  background-color: #00A86B;
+  transition: .7s ease;
+}
+
+.button[value="+"] {
+  color: purple;
 }
 
 p {
@@ -181,3 +202,31 @@ p {
 p.font-nanum-pen-script {
   pointer-events: auto;
 }
+
+.counter {
+  position: relative;
+  width: 240px;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+//.counter:after {
+//  content: '';
+//  position: absolute;
+ // right: 0;
+ // left: 0;
+ // bottom: 0;
+//  width: 100%;
+//  height: 100%;
+  //background-color: rgba(0, 165, 114, .8);
+  //background-color: rgba(137, 207, 240, .8);
+  //animation: filler 5s linear;
+//  z-index: -10;
+//}
+
+@keyframes filler {
+  0% {
+    height: 0; 
+  }
+}
+
