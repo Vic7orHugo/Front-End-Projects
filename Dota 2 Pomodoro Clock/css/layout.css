@@ -124,12 +124,12 @@ span {
   margin-top: 40px;
   text-align: center; }
 
-button[value=stop-go] {
+button[value="stop-go"] {
+  position: relative;
   padding: 5px 40px;
   width: 240px;
   border-radius: 50%;
-  border-style: solid;
-  border-color: #444444; }
+  border: 7px solid rgba(0, 0, 0, 0.7); }
 
 button[value='-'], [value='+'] {
   font-size: 25px;
@@ -163,11 +163,6 @@ p.font-nanum-pen-script {
 .counter {
   position: relative;
   width: 240px;
-  overflow: hidden;
-  background-color: transparent; }
-
-@keyframes filler {
-  0% {
-    height: 0; } }
+  overflow: hidden; }
 
 /*# sourceMappingURL=layout.css.map */

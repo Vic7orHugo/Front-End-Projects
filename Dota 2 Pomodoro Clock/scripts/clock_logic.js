@@ -12,6 +12,7 @@ let sec = 0;
 let headStyle;
 let counterStyle;
 let count;
+let fillColor = "rgba(0, 165, 114, .8)";
 
 window.onload = () => {
   headStyle = document.createElement('STYLE');
@@ -30,6 +31,8 @@ const handleClick = (event) => {
       }    
       if (state === "paused") {
         min = parseInt(document.getElementById(whichTimer).innerHTML, 10);
+        sec = 0;
+        counterColor(fillColor, 0);
         document.getElementById("timer").innerHTML = document.getElementById(whichTimer).innerHTML;
       }
       break;
@@ -41,12 +44,15 @@ const handleClick = (event) => {
       }
       if (state === "paused") {
         min = parseInt(document.getElementById(whichTimer).innerHTML, 10);
+        sec = 0;
+        counterColor(fillColor, 0);
         document.getElementById("timer").innerHTML = document.getElementById(whichTimer).innerHTML;
       }
       break;
     case "reset":
       min = parseInt(document.getElementById(whichTimer).innerHTML, 10);
       sec = 0;
+      counterColor(fillColor, 0);
       clearInterval(intervalID);
       if (state !== "paused") {
         state = "paused";
@@ -57,27 +63,21 @@ const handleClick = (event) => {
       state = state === "paused" ? "counting" : "paused";
       if (state === "counting") {
         count = parseInt(document.getElementById(whichTimer).innerHTML, 10);
-        counterColor("rgba(0, 165, 114, .8)", count*60);
-        // let count = parseInt(document.getElementById(whichTimer).innerHTML, 10);
-        
-        // if (whichTimer === "session") {
-        //   counterColor("rgba(0, 165, 114, .8)", count*60);
-        // } else {
-        //   counterColor("rgba(137, 207, 240, .8)", count*60);
-        // }
         intervalID = window.setInterval(function() {
+          if(document.getElementById("session-name").innerHTML === "Session") fillColor = "rgba(0, 165, 114, .8)";
+          else fillColor = "rgba(137, 207, 240, .8)";
           if (min === 0 && sec === -1 && (whichTimer === "session")) {
             whichTimer = "break";
             count = parseInt(document.getElementById(whichTimer).innerHTML, 10);
-            counterColor("rgba(137, 207, 240, .8)", count*60);
-            min = parseInt(count, 10);
+            fillColor = "rgba(137, 207, 240, .8)";
+            min = count;
             sec = 0;
             document.getElementById("session-name").innerHTML = "Break";
           } else if (min === 0 && sec === -1 && (whichTimer === "break")) {
             whichTimer = "session";
             count = parseInt(document.getElementById(whichTimer).innerHTML, 10);
-            counterColor("rgba(0, 165, 114, .8)", count*60);
-            min = parseInt(count, 10);
+            fillColor = "rgba(0, 165, 114, .8)";
+            min = count;
             sec = 0;
             document.getElementById("session-name").innerHTML = "Session";
           }
@@ -92,6 +92,7 @@ const handleClick = (event) => {
             time += sec.toString();
           }
           document.getElementById("timer").innerHTML = time;
+          counterColor(fillColor, (100*(count*60 - (min*60 + sec))/(count*60)).toFixed(2));
           sec--;
         }, 1000);
       } else if (state === "paused") {
@@ -102,10 +103,9 @@ const handleClick = (event) => {
   
 };
 
-const counterColor = (color, time) => {
+const counterColor = (color, height) => {
   if (counterStyle) {
     headStyle.removeChild(counterStyle);
-      console.log("fucj");
   }
   let counterStyleText = `
     .counter:after {
@@ -115,13 +115,14 @@ const counterColor = (color, time) => {
       left: 0;
       bottom: 0;
       width: 100%;
-      height: 100%;
+      height: ${height}%;
       background-color: ${color};
-      animation: filler ${time}s linear;
       z-index: -10;
     }
   `;
   counterStyle = document.createTextNode(counterStyleText);
+  // This call has to be asynchronous because if you don't do it, the clock changes background color instantly,
+  // making it so it doesnt fill up anymore.
   headStyle.appendChild(counterStyle);
-  document.head.appendChild(headStyle)
+  document.head.appendChild(headStyle);
 };
